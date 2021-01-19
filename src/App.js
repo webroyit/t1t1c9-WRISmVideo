@@ -6,8 +6,6 @@ import Video from './components/Video';
 function App() {
   return (
     <div className="app">
-      <h1>WRI SmVideo</h1>
-
       <div className="app__videos">
         <Video />
         <Video />

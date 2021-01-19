@@ -3,6 +3,15 @@ html {
     scroll-snap-type: y mandatory;
 }
 
+.app {
+    height: 100vh;
+    background-color: #060608;
+
+    /* Center the elements horizontal and vertical */
+    display: grid;
+    place-items: center;
+}
+
 .app__videos {
     position: relative;
     height: 800px;
