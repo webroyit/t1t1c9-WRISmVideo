@@ -9,4 +9,7 @@ html {
     overflow: scroll;
     width: 80%;
     max-width: 500px;
+
+    /* Give scroll lock on vertical */
+    scroll-snap-type: y mandatory;
 }
