@@ -1,15 +1,27 @@
-import React, { useRef } from 'react';
+import React, { useState, useRef } from 'react';
 
 import './Video.css';
 
 function Video() {
+    const [playing, setPlaying] = useState(false);
+
     // 'useRef' to access the video
     const videoRef = useRef(null);
 
     const onVideoPress = () => {
-        // 'current' to get the curent reference of the video
-        // Play the video
-        videoRef.current.play();
+        if (playing) {
+            // 'current' to get the curent reference of the video
+            // Pause the video
+            videoRef.current.pause();
+            
+            setPlaying(false);
+        }
+        else {
+            // Play the video
+            videoRef.current.play();
+
+            setPlaying(true);
+        }
     }
 
     return (
