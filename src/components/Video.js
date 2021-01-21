@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 
 import './Video.css';
+import VideoFooter from './VideoFooter';
 
 function Video() {
     const [playing, setPlaying] = useState(false);
@@ -35,6 +36,7 @@ function Video() {
                 ref={videoRef}
                 src="//player.vimeo.com/video/394580451?title=0&amp;portrait=0&amp;byline=0&amp;autoplay=1"
             ></iframe>
+            <VideoFooter />
         </div>
     )
 }
