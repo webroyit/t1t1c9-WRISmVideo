@@ -1,19 +1,41 @@
 .videoFooter {
     position: relative;
-    bottom: 100px;
+    bottom: 160px;
     color: white;
     display: flex;
-    padding: 0 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
 
 .videoFooter__text {
     flex: 1;
 }
 
+.videoFooter__text > p{
+    padding-bottom: 1rem;
+}
+
 .videoFooter__record {
     animation: spinTheDisk infinite 5s linear;      /* 'infinite' to keep doing the animation */
     height: 50px;
     filter: invert(1);     /*  Change the color of the image to white */
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.videoFooter__icon {
+    position: absolute;
+}
+
+.videoFooter__ticker > .ticker {
+    height: fit-content;
+    margin-left: 3rem;
+    width: 70%;
+}
+
+.videoFooter__text > h3 {
+    padding-bottom: 1rem;
 }
 
 @keyframes spinTheDisk {
