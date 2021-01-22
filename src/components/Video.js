@@ -4,7 +4,15 @@ import './Video.css';
 import VideoFooter from './VideoFooter';
 import VideoSidebar from './VideoSidebar';
 
-function Video() {
+function Video({
+    url,
+    channel,
+    description,
+    song,
+    likes,
+    messages,
+    shares
+}) {
     const [playing, setPlaying] = useState(false);
 
     // 'useRef' to access the video
@@ -35,16 +43,16 @@ function Video() {
                 loop
                 onClick={onVideoPress}
                 ref={videoRef}
-                src="//player.vimeo.com/video/394580451?title=0&amp;portrait=0&amp;byline=0&amp;autoplay=1"
+                src={url}
             ></iframe>
             <VideoFooter
-                channel="Username1"
-                description="This is description"
-                song="This is fun, try it again" />
+                channel={channel}
+                description={description}
+                song={song} />
             <VideoSidebar
-                likes={163}
-                shares={50}
-                messages={24} />
+                likes={likes}
+                shares={shares}
+                messages={messages} />
         </div>
     )
 }
