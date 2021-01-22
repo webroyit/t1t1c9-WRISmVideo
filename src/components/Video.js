@@ -41,7 +41,10 @@ function Video() {
                 channel="Username1"
                 description="This is description"
                 song="This is fun, try it again" />
-            <VideoSidebar />
+            <VideoSidebar
+                likes={163}
+                shares={50}
+                messages={24} />
         </div>
     )
 }
