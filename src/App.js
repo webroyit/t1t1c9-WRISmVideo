@@ -1,30 +1,35 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import './App.css';
+import db from './firebase';
 import Video from './components/Video';
 
 function App() {
+  const [videos, setVideos] = useState([]);
+
+  useEffect(() => {
+    // Fires once when the component loads and again based on the array
+
+    // 'onSnapshot' get the data from firebase in real time
+    db.collection('videos').onSnapshot(snapshot => {
+      setVideos(snapshot.docs.map(doc => doc.data()));
+    })
+  }, [])
+
   return (
     <div className="app">
       <div className="app__videos">
-        <Video
-          url="//player.vimeo.com/video/394580451?title=0&amp;portrait=0&amp;byline=0&amp;autoplay=1"
-          channel="Username1"
-          description="This is description"
-          song="This is fun, try it again"
-          likes={163}
-          shares={50}
-          messages={24}
+        {videos.map(({url, channel, description, song, likes, shares, messages}) => (
+          <Video
+            url={url}
+            channel={channel}
+            description={description}
+            song={song}
+            likes={likes}
+            shares={shares}
+            messages={messages}
           />
-        <Video
-          url="//player.vimeo.com/video/436938412?title=0&portrait=0&byline=0&autoplay=1"
-          channel="Username2"
-          description="This is description"
-          song="This is fun, try it again"
-          likes={213}
-          shares={77}
-          messages={69}
-          />
+        ))}
       </div>
     </div>
   );
